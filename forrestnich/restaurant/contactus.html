@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=divice-width, initial-scale=1, shrink-to-fit=no">
+        
+        <title>Contact Us</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        
+        <style>
+            body {
+                text-align:center; 
+            } 
+            nav .btn {
+                background-color: white;
+            }
+        </style>
+        
+    </head>
+
+<body>
+    <span>
+    <h1>Lean Cuts</h1>
+    <hr/>
+    <nav>
+        <p>
+        <a class='btn badge-pill' href = 'home.html'><img src="images/home.svg" style="width:20px; height:20px"/></a>
+        <a class='btn badge-pill' href = 'menu.html'>Menu</a>     
+        <a class='btn badge-pill' href = 'contactus.html'>Contact Us</a>
+        </p>
+    </nav>
+    </span>
+    <hr/>
+
+    <h2>Get in touch with us!</h2>
+        
+<form class="needs-validation" novalidate style="width:800px; margin:auto;">
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom01">First name</label>
+      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
+      <div class="invalid-feedback">
+        Please put your first name here
+      </div>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom02">Last name</label>
+      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" required>
+      <div class="invalid-feedback">
+        Please put your last name here
+      </div>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+  </div>
+    
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustomUsername">Phone Number</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="validationCustomUsername" placeholder="Phone Number" required>
+        <div class="invalid-feedback">
+          Please input a phone number.
+        </div>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom04">Have you been into the restaurant?</label>
+      <select class="form-control" id="validationCustom04" placeholder="beenin">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+      <div class="invalid-feedback">
+        Please provide a valid answer
+      </div>
+    </div>
+  </div>
+    
+  <div class="form-row">
+    <div class="col-md-7 mb-3" style="margin:auto">
+      <label for="validationCustom03">Reason for Inquiry</label>
+      <select class="form-control" id="validationCustom03" palceholder="reason" required>
+        <option value="">Choose...</option>
+        <option value="catering">Catering</option>
+        <option value="privateparty">Private Party</option>
+        <option value="feedback">Feedback</option>
+        <option value="other">Other</option>
+      </select>
+      <div class="valid-feedback">
+          Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please select a reason for inquiry
+      </div>
+    </div>
+  </div>
+    
+  <div class="form-row">
+    <div class="col-md-7 mb-3" style="margin:auto">
+      <label for="validationCustom05">Best days to contact you:</label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">M
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">T
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">W
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">Th
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">F
+        </div>
+      <div class="invalid-feedback">
+        Please provide days you are available.
+      </div>
+    </div>
+  </div>
+  
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
+        
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<!-- Copied from https://getbootstrap.com/docs/4.0/components/forms/ -->   
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+</body>    
+    
+    <footer>
+        <span>
+        <hr/>
+        <p>1014 Ash Avenue, Ames, IA, 50014</p>
+        <p>(515) 708 - 7136</p>
+        </span>
+    </footer>
+
+</html>

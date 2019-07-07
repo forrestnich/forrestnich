@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function clearErrors() {    
+        for (var loopCounter = 0; loopCounter < document.forms["numberFun"].elements.length; loopCounter++) {
+            if (document.forms["numberFun"].elements[loopCounter].parentElement.className.indexOf("has-") != -1) {
+                document.forms["numberFun"].elements[loopCounter].parentElement.className = "form-group";
+            }
+        }
+    }
+
+    function resetForm() {
+        clearErrors();
+        document.forms["numberFun"]["num1"].value = "";
+        document.forms["numberFun"]["num2"].value = "";
+        document.getElementById("results").style.display = "none";
+        document.getElementById("submitButton").innerText = "Submit";
+        document.forms["numberFun"]["num1"].focus();
+    }
+
+    function validateItems() {
+        clearErrors();
+        var num1 = document.forms["numberFun"]["num1"].value;
+        var num2 = document.forms["numberFun"]["num2"].value;
+        if (num1 == "" || isNaN(num1)) {
+            alert("Num1 must be filled in with a number.");
+            document.forms["numberFun"]["num1"].parentElement.className = "form-group has-error";
+            document.forms["numberFun"]["num1"].focus();
+            return false;
+        }
+        if (num2 == "" || isNaN(num2)) {
+            alert("Num2 must be filled in with a number.");
+            document.forms["numberFun"]["num2"].parentElement.className = "form-group has-error"
+            document.forms["numberFun"]["num2"].focus();
+            return false;
+        }
+        document.getElementById("results").style.display = "block";
+        document.getElementById("submitButton").innerText = "Recalculate";
+        document.getElementById("addResult").innerText = Number(num1) + Number(num2);
+        document.getElementById("subtractResult").innerText = num1 - num2;
+        document.getElementById("multiplyResult").innerText = num1 * num2;
+        document.getElementById("divideResult").innerText = num1 / num2;
+        return false;
+    }   
+    </script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class = "container">
+        <h1>Click to Add Items</h1>
+        <form name="numberFun" onsubmit="return validateItems();" onreset="resetForm();" class="form-inline">
+            
+            <div class="form-group">
+                <label for="num1">Num1</label>
+                <input type="number" class="form-control" id = "num1">
+            </div>
+            
+            <div class="form-group">
+                <label for = "num2">Num2</label>
+                <input type="number" class="form-control" id = "num2">
+            </div>
+            
+            <button type="submit" id="submitButton" class="btn btn-default">Submit</button>
+            <button type="reset" id="resetButton" class="btn">Reset</button>
+        </form>
+        
+        <table id="results" class="table table-striped" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Operation</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Addition (+)</td>
+                    <td><span id="addResult"></span></td>
+                </tr>
+                <tr>
+                    <td>Subtration (-)</td>
+                    <td><span id="subtractResult"></span></td>
+                </tr>
+                <tr>
+                    <td>Multiplication (x)</td>
+                    <td><span id="multiplyResult"></span></td>
+                </tr>
+                <tr>
+                    <td>Division (/)</td>
+                    <td><span id="divideResult"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

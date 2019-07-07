@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>        
+    function rollDice() {
+        var startingBet = document.forms["luckySevens"]["startingBet"].value;
+        if (isNaN(startingBet)) {
+            alert (startingBet + " is not valid. Starting Bet must be filled in with a number");
+            return false;
+        }
+        if (startingBet == "") {
+            alert ("Starting Bet must be filled in with a number");
+            return false;
+        }
+        if (startingBet <= 0) {
+            alert (startingBet + " is not valid. Starting Bet must be a positive integer");
+            return false;
+        }
+        
+        var money = startingBet;
+        var maxWon = startingBet;
+        var maxRollCount = 0;
+        
+        for (var loopCounter = 0; money > 0; loopCounter++) {
+            var diceOne = Math.ceil(Math.random() * 6);
+            var diceTwo = Math.ceil(Math.random() * 6);
+            var diceRoll = diceOne + diceTwo;
+            
+            if (diceRoll == 7) {
+                money += 4;
+                if (money > maxWon) {
+                maxWon = money;
+                maxRollCount = loopCounter;
+                }
+            } else {
+                money -= 1;
+            }
+            
+        }
+        
+        document.getElementById("results").style.display = "block";
+        document.getElementById("start").innerText = startingBet;
+        document.getElementById("loopCounter").innerText = loopCounter;
+        document.getElementById("maxWon").innerText = maxWon;
+        document.getElementById("maxRollCount").innerText = maxRollCount;
+        return false;
+    }   
+    </script>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+    
+<body>
+    <h1>Lucky Sevens</h1>
+    
+    <form name="luckySevens" onsubmit="return rollDice();" class="form-inline">
+            
+        <div class="form-group">
+            <label for="startingBet">Starting Bet</label>
+            <input type="number" class="form-control" id = "startingBet">
+        </div>
+
+        <button type="submit" id="submitButton" class="btn btn-default">Submit</button>
+    </form>
+        
+    <div id="results" style = "display:none">
+    <table border style="text-align: center">
+        <thead>
+            <th colspan="2" style="font-weight: bold">Results</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Starting Bet</td>
+                <td>$<span id="start"></span>.00</td>
+            </tr>
+            <tr>
+                <td>Total Rolls Before Going Broke</td>
+                <td><span id="loopCounter"></span></td>
+            </tr>
+            <tr>
+                <td>Highest Amount Won</td>
+                <td>$<span id="maxWon"></span>.00</td>
+            </tr>
+            <tr>
+                <td>Roll Count at Highest Amount Won</td>
+                <td><span id="maxRollCount"></span></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+/* 
+Creator: Forrest Nicholson
+Date Created: 6/24/2019
+*/
+
+body {
+    background-color: #fef9ff;
+    font-family: arial, helvetica, sans-serif;
+    color: #0d1f2d;
+    max-width: 900px;
+    margin: 0 auto;
+    border: thick solid black;
+}
+header, footer {
+    background-color: #546a7b;
+    color: #fef9ff;
+    height: 100px;
+    text-align: center;
+    padding: 30px 10px 20px 10px;
+}
+nav{
+    border-top: 3px dashed #546a7b;
+    border-bottom: 3px dashed #546a7b;
+    margin-top: 4px;
+}
+nav a {
+    background-color: #5b7d87;
+    color: #fef9ff;
+    padding: 8px;
+    border: thin solid #0d1f2d;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: 20px;
+    width:100px;
+    float: left;
+}
+nav a:hover {
+    background-color:#fef9ff;
+    color: #57bd87;
+}
+nav a:active{
+    font-weight: bold;
+}
+nav a:visited{
+    color: #e4c3ad;
+}
+h1{
+    font-size: 2.5em;
+}
+h2{
+    font-style: italic;
+}
+font{
+    color: #0d1f2d;
+}
+.border {
+    border: thick solid blue;
+}
+#experience {
+    border: thick dashed orange;
+}
+.clear-float {
+    clear:both;
+}
+article img{
+    float:left;
+}
+.right-content {
+    float:left;
+}
+img {
+    border: thick solid black;
+}
